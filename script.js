@@ -1,5 +1,8 @@
 (function() {
-    const WS_URL = 'ws://localhost:8080/ws';
+    const WS_URL =
+        window.location.hostname === "localhost"
+        ? "ws://localhost:8080"
+        : "wss://" + window.location.host;
     
     const canvas = document.getElementById('joystickCanvas');
     const ctx = canvas.getContext('2d');
